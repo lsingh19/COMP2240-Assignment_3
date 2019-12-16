@@ -34,9 +34,9 @@ public class A3
                     pageRequests.add(Integer.parseInt(line));   // adding the number to the pageRequests array list
                     line = br.readLine();
                 }
-
+				
                 // creating a process with the retrieved data from the file
-                Process temp = new Process(id, args[fileNumber], pageRequests, allocatedFrames);
+                Process temp = new Process(id, args[fileNumber].substring(3, args[fileNumber].length()), pageRequests, allocatedFrames);
                 // adding the process to the readyQueue
                 readyQ.add(temp);
                 id++;               // incrementing id variable
