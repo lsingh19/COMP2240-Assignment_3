@@ -44,9 +44,12 @@ In Assignment 1, we assumed that the system had an infinite amount of memory. In
 - **Page fault handling**: When a page fault occurs, the interrupt routine will handle the fault by placing an I/O request into a queue, which will later be processed by the I/O controller to bring the page into main memory. This may require replacing a page in main memory using a page replacement policy (LRU or clock). Other processes should be scheduled to run while such an I/O operation is occurring. 
   1. Issuing a page fault and blocking a process takes no time. If a page fault occurs, then another ready process can run immediately at the same time unit. 
   2. Swapping in a page takes 6 units of time (if a page required by a process is not in main memory, the process must be put into its blocked state until the required page is available).  
-- Scheduling: The system is to use a Round Robin short-term scheduling algorithm with time a quantum of Q. 
-a. Executing a single instruction (ie: a page) takes 1 unit of time. 
-b. Switching the processes does not take any time. 
-c. If multiple process becomes ready at the same time, then they enter the ready queue in the order of their ID.  
-d. All the processes start execution at time t=0. 
-e. If a process becomes ready at time unit t then execution of that process can occur in the same time unit t without any delay.
+- **Scheduling**: The system is to use a Round Robin short-term scheduling algorithm with time a quantum of Q.  
+  1. Executing a single instruction (ie: a page) takes 1 unit of time. 
+  2. Switching the processes does not take any time. 
+  3. If multiple process becomes ready at the same time, then they enter the ready queue in the order of their ID.  
+  4. All the processes start execution at time t=0. 
+  5. If a process becomes ready at time unit t then execution of that process can occur in the same time unit t without any delay.
+
+You are to compare the performance of the LRU and Clock page replacement algorithms for the fixed allocation with local replacement strategy. 
+
